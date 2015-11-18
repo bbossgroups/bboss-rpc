@@ -72,9 +72,9 @@ public interface RemoteServiceID extends ServiceID {
 		 * @return the rest
 		 */
 	    public String getNextRestfulServiceAddress();
-	    public Class<?> getInfType();
+	    public String getInfType();
 	    
-	    public void setInfType(Class<?> infType);
+	    public void setInfType(String infType);
 
 //		public void apendUrlParams(RemoteServiceID restid);
 	    

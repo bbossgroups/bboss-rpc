@@ -45,7 +45,7 @@ import bboss.org.jgroups.Address;
 public class ServiceIDImpl extends BaseServiceIDImpl implements RemoteServiceID{
 	private static Logger log = Logger.getLogger(ServiceIDImpl.class);
 	protected transient Target target;
-	protected Class<?> infType;
+	protected String infType;
 	/**
 	 * serviceID: (ip:port;ip:port)/serviceid
 	 */
@@ -690,10 +690,10 @@ public class ServiceIDImpl extends BaseServiceIDImpl implements RemoteServiceID{
 	public String getSourceip() {
 		return sourceip;
 	}
-	public Class<?> getInfType() {
+	public String getInfType() {
 		return infType;
 	}
-	public void setInfType(Class<?> infType) {
+	public void setInfType(String infType) {
 		this.infType = infType;
 		if(restfulServiceID != null)
 			this.restfulServiceID.setInfType(infType);

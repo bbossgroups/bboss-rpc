@@ -186,7 +186,7 @@ public class ClientProxyContext
 			if(value != null)
 				return value;
 			RemoteServiceID serviceID = buildServiceID(name,context,containerType);
-			serviceID.setInfType(type);
+			serviceID.setInfType(type.getName());
 			RemoteCallContext ccontext = new RemoteCallContextImpl(context,containerType);
 			buildClientCallContext(serviceID, ccontext,false);
 			value =  CGLibUtil.getBeanInstance(type, new RemoteCGLibProxy(serviceID,ccontext));

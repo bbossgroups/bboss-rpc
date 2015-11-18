@@ -23,6 +23,8 @@ import java.lang.reflect.Method;
 import org.frameworkset.spi.BaseApplicationContext;
 import org.frameworkset.spi.ClientProxyContext;
 import org.frameworkset.spi.SPIException;
+import org.frameworkset.spi.assemble.Pro;
+import org.frameworkset.spi.assemble.ProviderManagerInfo;
 /**
  * 
  * <p>Title: DefaultRemoteHandler.java</p> 
@@ -68,12 +70,20 @@ public class DefaultRemoteHandler implements RemoteHandler{
 	        {
 	        	
 	        	BaseApplicationContext context = BaseApplicationContext.getBaseApplicationContext(serviceID.getApplicationContext(),serviceID.getContainerType());
+	        	Pro p = context.getProBean(serviceID.getService());
+	        	if(!p.isEnablerpc())
+	        	{
+	        		throw new SPIException("SPI Exception: service["+ serviceID.getOrigineServiceID() +"] is not an enabled  rpc service.");
+	        	}
 	            instance = context.getBeanObject(serviceID.getService());
 	        }
 	        else
 	        {
 
 	        	BaseApplicationContext context = BaseApplicationContext.getBaseApplicationContext(serviceID.getApplicationContext(),serviceID.getContainerType());
+	        	ProviderManagerInfo providerManagerInfo = context.getServiceProviderManager().getProviderManagerInfo(serviceID.getService());
+	    		if (!providerManagerInfo.isEnablerpc()) 
+	    			throw new SPIException("SPI Exception: service["+ serviceID.getOrigineServiceID() +"] is not an enabled  rpc service.");
 	            instance = context.getProvider(serviceID.getService(),serviceID.getProviderID());
 	        }
         }

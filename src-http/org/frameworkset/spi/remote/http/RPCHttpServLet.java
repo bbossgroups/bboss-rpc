@@ -76,9 +76,12 @@ public class RPCHttpServLet extends HttpServlet {
 			PrintWriter out = resp.getWriter();
 			ObjectSerializable.toXML(ret, out);
 			out.flush();
+		}  catch (IOException e) {
+			throw e;
+		}catch (ServletException e) {
+			throw e;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ServletException(e);
 		}
 
 	}
