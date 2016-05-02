@@ -4,3 +4,8 @@
 /build.log
 /classes/
 /classes1/
+/build/
+/.gradle/
+/.settings/
+/.classpath
+/.project
