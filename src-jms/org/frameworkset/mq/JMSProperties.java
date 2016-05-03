@@ -23,7 +23,7 @@ import javax.jms.JMSException;
  * Copyright (c) 2007
  * </p>
  * 
- * @Date 2009-8-10 ионГ11:09:49
+ * @Date 2009-8-10 11:09:49
  * @author biaoping.yin
  * @version 1.0
  */

@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
  * </p>
  * <p>bboss workgroup</p>
  * <p>Copyright (c) 2007</p>
- * @Date 2009-10-11 ионГ09:12:31
+ * @Date 2009-10-11 09:12:31
  * @author biaoping.yin
  * @version 1.0
  */

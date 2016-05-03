@@ -26,7 +26,7 @@ import javax.jms.MessageListener;
  * <p>Description: </p>
  * <p>bboss workgroup</p>
  * <p>Copyright (c) 2007</p>
- * @Date 2010-1-18 ионГ11:33:20
+ * @Date 2010-1-18 11:33:20
  * @author biaoping.yin
  * @version 1.0
  */

@@ -31,7 +31,7 @@ import javax.jms.Topic;
  * <p>Description: </p>
  * <p>bboss workgroup</p>
  * <p>Copyright (c) 2007</p>
- * @Date 2010-1-13 ионГ10:48:45
+ * @Date 2010-1-13 10:48:45
  * @author biaoping.yin
  * @version 1.0
  */

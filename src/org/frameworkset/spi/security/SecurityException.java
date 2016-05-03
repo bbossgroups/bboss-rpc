@@ -23,7 +23,7 @@ import org.frameworkset.spi.SPIException;
  * <p>Description: </p>
  * <p>bboss workgroup</p>
  * <p>Copyright (c) 2007</p>
- * @Date 2010-2-5 ионГ11:35:43
+ * @Date 2010-2-5 11:35:43
  * @author biaoping.yin
  * @version 1.0
  */

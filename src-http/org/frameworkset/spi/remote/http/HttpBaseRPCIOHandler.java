@@ -42,7 +42,7 @@ import org.frameworkset.spi.remote.RequestHandler;
  * <p>Description: </p>
  * <p>bboss workgroup</p>
  * <p>Copyright (c) 2007</p>
- * @Date 2010-9-12 ионГ10:02:00
+ * @Date 2010-9-12 10:02:00
  * @author biaoping.yin
  * @version 1.0
  */

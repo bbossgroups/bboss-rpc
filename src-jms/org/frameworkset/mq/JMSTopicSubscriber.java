@@ -36,7 +36,7 @@ import javax.jms.TopicSubscriber;
  * Copyright (c) 2007
  * </p>
  * 
- * @Date 2010-1-18 ионГ11:35:12
+ * @Date 2010-1-18 11:35:12
  * @author biaoping.yin
  * @version 1.0
  */

@@ -28,7 +28,7 @@ import org.apache.http.params.HttpParams;
  * <p>Description: </p>
  * <p>bboss workgroup</p>
  * <p>Copyright (c) 2007</p>
- * @Date 2011-11-26 ионГ1:05:46
+ * @Date 2011-11-26 1:05:46
  * @author biaoping.yin
  * @version 1.0
  */

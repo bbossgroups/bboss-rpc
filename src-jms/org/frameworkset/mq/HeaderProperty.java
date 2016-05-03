@@ -15,7 +15,7 @@ package org.frameworkset.mq;
  * Copyright (c) 2007
  * </p>
  * 
- * @Date 2009-8-8 ионГ11:56:42
+ * @Date 2009-8-8 11:56:42
  * @author biaoping.yin
  * @version 1.0
  */
