@@ -1,6 +1,7 @@
 	group = PROJ_GROUP
 	version = PROJ_VERSION	
 	
+	
 	apply plugin: "java"
 	apply plugin: "maven-publish"
 	apply plugin: "eclipse"
@@ -93,9 +94,9 @@ sourceSets {
 dependencies {
 	
     compile (
-            [group: 'com.bbossgroups', name: 'bboss-util', version: "${version}", transitive: false],
-            [group: 'com.bbossgroups', name: 'bboss-core', version: "${version}", transitive: false],
-            [group: 'com.bbossgroups', name: 'bboss-soa', version: "${version}", transitive: false],
+            [group: 'com.bbossgroups', name: 'bboss-util', version: "${BBOSS_VERSION}", transitive: false],
+            [group: 'com.bbossgroups', name: 'bboss-core', version: "${BBOSS_VERSION}", transitive: false],
+            [group: 'com.bbossgroups', name: 'bboss-soa', version: "${BBOSS_VERSION}", transitive: false],
             [group: 'log4j', name: 'log4j', version: '1.2.16', transitive: false],          
             [group: 'oro', name: 'oro', version: '2.0.8', transitive: false],         
             [group: 'cglib', name: 'cglib-nodep', version: '3.1', transitive: false],
@@ -117,6 +118,42 @@ dependencies {
             [group: 'org.apache.camel', name: 'camel-jms', version: '2.2.0', transitive: false],
             [group: 'icu4j', name: 'icu4j', version: '2.6.1', transitive: false],
             [group: 'org.jasypt', name: 'jasypt', version: '1.9.2', transitive: false],
+            [group: 'org.apache.activemq', name: 'activeio-core', version: '3.1.2', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-camel', version: '5.5.0', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-core', version: '5.5.0', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-console', version: '5.5.0', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-jmdns_1.0', version: '5.5.0', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-optional', version: '5.5.0', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-pool', version: '5.5.0', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-web', version: '5.5.0', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-xmpp', version: '5.5.0', transitive: false],
+            [group: 'org.apache.activemq', name: 'activemq-jaas', version: '5.5.0', transitive: false],
+              [group: 'commons-pool', name: 'commons-pool', version: '1.5.4', transitive: false],
+             [group: 'org.springframework', name: 'spring-beans', version: '2.5.5', transitive: false],
+             [group: 'org.springframework', name: 'spring-context', version: '2.5.5', transitive: false],
+             [group: 'org.springframework', name: 'spring-core', version: '2.5.5', transitive: false],
+             [group: 'org.springframework', name: 'spring-web', version: '2.5.5', transitive: false],
+             [group: 'org.apache.geronimo.specs', name: 'geronimo-j2ee-management_1.0_spec', version: '1.0', transitive: false],
+             [group: 'org.apache.cxf', name: 'cxf-rt-bindings-soap', version: '3.1.0', transitive: false],
+             [group: 'org.apache.cxf', name: 'cxf-rt-databinding-jaxb', version: '3.1.0', transitive: false],
+             [group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '3.1.0', transitive: false],
+             [group: 'org.apache.cxf', name: 'cxf-rt-frontend-simple', version: '3.1.0', transitive: false],
+             [group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: '3.1.0', transitive: false],
+             [group: 'org.apache.cxf', name: 'cxf-rt-wsdl', version: '3.1.0', transitive: false],
+            [group: 'org.apache.geronimo.specs', name: 'geronimo-jaxws_2.2_spec', version: '1.1', transitive: false],
+            [group: 'org.apache.geronimo.specs', name: 'geronimo-jms_1.1_spec', version: '1.1.1', transitive: false],
+            [group: 'org.apache.geronimo.specs', name: 'geronimo-servlet_3.0_spec', version: '1.0', transitive: false],
+            [group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0-m10', transitive: false],
+            [group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.12', transitive: false],
+            [group: 'org.glassfish.jaxb', name: 'jaxb-core', version: '2.2.11', transitive: false],
+            [group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.2.11', transitive: false],
+            [group: 'org.glassfish.jaxb', name: 'jaxb-xjc', version: '2.2.11', transitive: false],
+            [group: 'org.apache.neethi', name: 'neethi', version: '3.0.3', transitive: false],
+            [group: 'org.codehaus.woodstox', name: 'stax2-api', version: '3.1.1', transitive: false],
+            [group: 'org.codehaus.woodstox', name: 'woodstox-core-asl', version: '4.2.0', transitive: false],
+            [group: 'wsdl4j', name: 'wsdl4j', version: '1.6.3', transitive: false],
+            [group: 'xml-resolver', name: 'xml-resolver', version: '1.2', transitive: false],
+            [group: 'org.apache.ws.xmlschema', name: 'xmlschema-core', version: '2.2.1', transitive: false],
             fileTree(dir: 'lib', include: '**/*.jar'),
     )
     testCompile(
