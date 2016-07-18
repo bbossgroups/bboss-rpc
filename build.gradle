@@ -149,16 +149,19 @@ dependencies {
             [group: 'org.apache.geronimo.specs', name: 'geronimo-servlet_3.0_spec', version: '1.0', transitive: false],
             [group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0-m10', transitive: false],
             [group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.12', transitive: false],
-            [group: 'org.glassfish.jaxb', name: 'jaxb-core', version: '2.2.11', transitive: false],
+            
+             [group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.2.11', transitive: false],
             [group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.2.11', transitive: false],
-            [group: 'org.glassfish.jaxb', name: 'jaxb-xjc', version: '2.2.11', transitive: false],
+            [group: 'com.sun.xml.bind', name: 'jaxb-xjc', version: '2.2.11', transitive: false],
+            
+            
             [group: 'org.apache.neethi', name: 'neethi', version: '3.0.3', transitive: false],
             [group: 'org.codehaus.woodstox', name: 'stax2-api', version: '3.1.1', transitive: false],
             [group: 'org.codehaus.woodstox', name: 'woodstox-core-asl', version: '4.2.0', transitive: false],
             [group: 'wsdl4j', name: 'wsdl4j', version: '1.6.3', transitive: false],
             [group: 'xml-resolver', name: 'xml-resolver', version: '1.2', transitive: false],
             [group: 'org.apache.ws.xmlschema', name: 'xmlschema-core', version: '2.2.1', transitive: false],
-            //fileTree(dir: 'lib', include: '**/*.jar'),
+            
     )
     testCompile(
     		[group: 'xpp3', name: 'xpp3', version: '1.1.4c', transitive: false],
