@@ -1,7 +1,7 @@
 
 
 # bboss rpc工程
- bboss rpc eclipse project.支持丰富的协议栈(http/netty/mina/jms/webservice/rmi/jgroups/restful) 安全高效,
+ bboss rpc  project.支持丰富的协议栈(http/netty/mina/jms/webservice/rmi/jgroups/restful) 安全高效,
  
    可非常方便地将bboss ioc管理的业务组件发布成RPC服务
 # 工程gradle构建运行说明：
