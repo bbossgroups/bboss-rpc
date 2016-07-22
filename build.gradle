@@ -119,7 +119,7 @@ dependencies {
             [group: 'commons-codec', name: 'commons-codec', version: '1.10', transitive: false],
             [group: 'org.apache.camel', name: 'camel-core', version: '2.2.0', transitive: false],
             [group: 'org.apache.camel', name: 'camel-jms', version: '2.2.0', transitive: false],
-            [group: 'icu4j', name: 'icu4j', version: '2.6.1', transitive: false],
+           [group: 'com.ibm.icu', name: 'icu4j', version: '57.1', transitive: false],
             [group: 'org.jasypt', name: 'jasypt', version: '1.9.2', transitive: false],
             [group: 'org.apache.activemq', name: 'activeio-core', version: '3.1.2', transitive: false],
             [group: 'org.apache.activemq', name: 'activemq-camel', version: '5.5.0', transitive: false],
