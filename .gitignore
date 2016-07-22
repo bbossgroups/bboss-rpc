@@ -9,3 +9,5 @@
 /.settings/
 /.classpath
 /.project
+/bboss-rpc.iml
+/local.properties
