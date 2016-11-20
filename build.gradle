@@ -56,6 +56,9 @@
 
 	repositories {
 		mavenLocal()
+		maven {
+	        url "http://139.224.19.207:8881/repository/maven-public/"
+	    }
 		mavenCentral()
 		
 	}
