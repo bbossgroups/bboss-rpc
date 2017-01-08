@@ -26,8 +26,7 @@ import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.transport.http.HTTPConduit;
 import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
-import org.frameworkset.soa.ObjectSerializable;
-import org.frameworkset.spi.BaseSPIManager;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.BeanAccembleHelper;
 import org.frameworkset.spi.assemble.Pro;
 import org.frameworkset.spi.remote.BaseFutureCall;
@@ -101,7 +100,7 @@ public class FutureCall extends BaseFutureCall
                     /**
                      * 初始化cxf客服端连接参数开始
                      */
-                    Pro client_config = BaseSPIManager.getProBean("cxf.client.config");
+                    Pro client_config = BaseSPIManager2.getProBean("cxf.client.config");
                     if(client_config != null)
                     {
                         boolean enable = client_config.getBooleanExtendAttribute("enable");

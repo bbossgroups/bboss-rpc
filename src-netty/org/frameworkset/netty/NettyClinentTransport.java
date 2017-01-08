@@ -31,6 +31,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLEngine;
 
 import org.frameworkset.spi.ApplicationContext;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.ProMap;
 import org.frameworkset.spi.remote.RPCAddress;
 import org.frameworkset.spi.remote.RPCMessage;
@@ -355,7 +356,7 @@ public class NettyClinentTransport {
  	         * 增加ssl的技术支持
  	         */
  	
- 	        ProMap commons = ApplicationContext.getApplicationContext().getMapProperty("rpc.protocol.netty.params");
+ 	        ProMap commons = BaseSPIManager2.getMapProperty("rpc.protocol.netty.params");
  	        boolean enablessl = commons.getBoolean("enablessl",false);
  	        SSLEngine eg = null;
  	        if(enablessl)
@@ -389,7 +390,7 @@ public class NettyClinentTransport {
     
     public static SSLEngine buildSSLEngine(boolean isclient)
     {
-        ProMap commons = ApplicationContext.getApplicationContext().getMapProperty("rpc.protocol.netty.params");
+        ProMap commons = BaseSPIManager2.getMapProperty("rpc.protocol.netty.params");
         String name = "rpc.protocol.netty.ssl.client";
         if(isclient)
             name = "rpc.protocol.netty.ssl.client";
@@ -400,7 +401,7 @@ public class NettyClinentTransport {
         {
             ProMap ssls = null;
             
-            ssls = ApplicationContext.getApplicationContext().getMapProperty(name);
+            ssls = BaseSPIManager2.getMapProperty(name);
             if(ssls == null)
             {
                 throw new NettyRunException("启用了ssl模式， 但是没有指定"+ name +" 参数，请检查文件org/frameworkset/spi/manager-rpc-netty.xml是否正确设置了该参数。");

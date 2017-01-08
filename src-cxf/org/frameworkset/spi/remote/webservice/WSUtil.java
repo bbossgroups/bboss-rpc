@@ -16,8 +16,7 @@
 
 package org.frameworkset.spi.remote.webservice;
 
-import org.frameworkset.spi.ApplicationContext;
-import org.frameworkset.spi.assemble.ProList;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.remote.RPCIOHandler;
 import org.frameworkset.spi.remote.Util;
 
@@ -60,7 +59,7 @@ public class WSUtil
 	{
 
 		// TODO Auto-generated method stub
-		return (RPCIOHandler)ApplicationContext.getApplicationContext().getBeanObject(Util.rpc_webservice_RPCServerIoHandler);
+		return (RPCIOHandler)BaseSPIManager2.getBeanObject(Util.rpc_webservice_RPCServerIoHandler);
 	}
 	
 //	 private static RPCCall webserviceRPCCall = (RPCCall)BaseSPIManager.getBeanObject(Util.rpc_webservice_RPCCall);

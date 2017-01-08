@@ -42,7 +42,7 @@ import org.apache.activemq.command.ActiveMQTempQueue;
 import org.apache.activemq.command.ActiveMQTempTopic;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.apache.activemq.pool.PooledConnectionFactory;
-import org.frameworkset.spi.BaseSPIManager;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.BeanAccembleHelper;
 import org.frameworkset.spi.assemble.Pro;
 import org.frameworkset.spi.assemble.ProMap;
@@ -198,7 +198,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                 if(factoryparams instanceof ProMap){
                     ProMap temp = (ProMap)factoryparams;
                     ProMap connectionParams = temp.getMap(connection_params);
-                    ProMap globalconnectionParams = BaseSPIManager.getMapProperty(connection_params);
+                    ProMap globalconnectionParams = BaseSPIManager2.getMapProperty(connection_params);
                     if(connectionParams != globalconnectionParams)
                     	BeanAccembleHelper.injectProperties(instance_,globalconnectionParams, connectionParams);
                     else
@@ -206,7 +206,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                     
                     org.apache.activemq.ActiveMQPrefetchPolicy a = new org.apache.activemq.ActiveMQPrefetchPolicy();
                     ProMap prefetchParams = temp.getMap(connection_params_prefetchPolicy);
-                    ProMap globalprefetchParams = BaseSPIManager.getMapProperty(connection_params_prefetchPolicy);
+                    ProMap globalprefetchParams = BaseSPIManager2.getMapProperty(connection_params_prefetchPolicy);
                     if(prefetchParams != globalprefetchParams)
 	                    BeanAccembleHelper.injectProperties(a, 
 	                    		globalprefetchParams,prefetchParams);
@@ -216,7 +216,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                     instance_.setPrefetchPolicy(a);            
                     RedeliveryPolicy r = new RedeliveryPolicy();
                     ProMap redirectParams = temp.getMap(connection_params_redirectPolicy);
-                    ProMap globalredirectParams = BaseSPIManager.getMapProperty(connection_params_redirectPolicy);
+                    ProMap globalredirectParams = BaseSPIManager2.getMapProperty(connection_params_redirectPolicy);
                     if(redirectParams != globalredirectParams)
                     	BeanAccembleHelper.injectProperties(r,globalredirectParams, redirectParams);
                     else
@@ -225,7 +225,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                 }else{
                 	Map temp = (Map)factoryparams;
                     ProMap connectionParams = (ProMap)temp.get(connection_params);
-                    ProMap globalconnectionParams = BaseSPIManager.getMapProperty(connection_params);
+                    ProMap globalconnectionParams = BaseSPIManager2.getMapProperty(connection_params);
                     if(connectionParams != globalconnectionParams)
                     	BeanAccembleHelper.injectProperties(instance_,globalconnectionParams, connectionParams);
                     else
@@ -233,7 +233,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                     
                     org.apache.activemq.ActiveMQPrefetchPolicy a = new org.apache.activemq.ActiveMQPrefetchPolicy();
                     ProMap prefetchParams = (ProMap)temp.get(connection_params_prefetchPolicy);
-                    ProMap globalprefetchParams = BaseSPIManager.getMapProperty(connection_params_prefetchPolicy);
+                    ProMap globalprefetchParams = BaseSPIManager2.getMapProperty(connection_params_prefetchPolicy);
                     if(prefetchParams != globalprefetchParams)
 	                    BeanAccembleHelper.injectProperties(a, 
 	                    		globalprefetchParams,prefetchParams);
@@ -243,7 +243,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                     instance_.setPrefetchPolicy(a);            
                     RedeliveryPolicy r = new RedeliveryPolicy();
                     ProMap redirectParams = (ProMap)temp.get(connection_params_redirectPolicy);
-                    ProMap globalredirectParams = BaseSPIManager.getMapProperty(connection_params_redirectPolicy);
+                    ProMap globalredirectParams = BaseSPIManager2.getMapProperty(connection_params_redirectPolicy);
                     if(redirectParams != globalredirectParams)
                     	BeanAccembleHelper.injectProperties(r,globalredirectParams, redirectParams);
                     else
@@ -317,9 +317,9 @@ public class AMQConnectionFactory extends JMSConnectionFactory
             ProMap globalreconnectPolicy = null;
             if(factoryparams instanceof ProMap){
                 reconnectPolicy = ((ProMap)factoryparams).getMap(connection_params_reconnectPolicy);
-                globalreconnectPolicy = BaseSPIManager.getMapProperty(connection_params_reconnectPolicy);
+                globalreconnectPolicy = BaseSPIManager2.getMapProperty(connection_params_reconnectPolicy);
             }else{
-            	globalreconnectPolicy = BaseSPIManager.getMapProperty(connection_params_reconnectPolicy);
+            	globalreconnectPolicy = BaseSPIManager2.getMapProperty(connection_params_reconnectPolicy);
             	
                 reconnectPolicy = (ProMap)(factoryparams).get(connection_params_reconnectPolicy);
             }
@@ -422,7 +422,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                 if(factoryparams instanceof ProMap){
                     ProMap temp = (ProMap)factoryparams;
                     ProMap connectionParams = temp.getMap(connection_params);
-                    ProMap globalconnectionParams = BaseSPIManager.getMapProperty(connection_params);
+                    ProMap globalconnectionParams = BaseSPIManager2.getMapProperty(connection_params);
                     if(connectionParams != globalconnectionParams)
                     	BeanAccembleHelper.injectProperties(instance_,globalconnectionParams, connectionParams);
                     else
@@ -430,7 +430,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                     
                     org.apache.activemq.ActiveMQPrefetchPolicy a = new org.apache.activemq.ActiveMQPrefetchPolicy();
                     ProMap prefetchParams = temp.getMap(connection_params_prefetchPolicy);
-                    ProMap globalprefetchParams = BaseSPIManager.getMapProperty(connection_params_prefetchPolicy);
+                    ProMap globalprefetchParams = BaseSPIManager2.getMapProperty(connection_params_prefetchPolicy);
                     if(prefetchParams != globalprefetchParams)
 	                    BeanAccembleHelper.injectProperties(a, 
 	                    		globalprefetchParams,prefetchParams);
@@ -440,7 +440,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                     instance_.setPrefetchPolicy(a);            
                     RedeliveryPolicy r = new RedeliveryPolicy();
                     ProMap redirectParams = temp.getMap(connection_params_redirectPolicy);
-                    ProMap globalredirectParams = BaseSPIManager.getMapProperty(connection_params_redirectPolicy);
+                    ProMap globalredirectParams = BaseSPIManager2.getMapProperty(connection_params_redirectPolicy);
                     if(redirectParams != globalredirectParams)
                     	BeanAccembleHelper.injectProperties(r,globalredirectParams, redirectParams);
                     else
@@ -449,7 +449,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                 }else{
                 	Map temp = (Map)factoryparams;
                     ProMap connectionParams = (ProMap)temp.get(connection_params);
-                    ProMap globalconnectionParams = BaseSPIManager.getMapProperty(connection_params);
+                    ProMap globalconnectionParams = BaseSPIManager2.getMapProperty(connection_params);
                     if(connectionParams != globalconnectionParams)
                     	BeanAccembleHelper.injectProperties(instance_,globalconnectionParams, connectionParams);
                     else
@@ -457,7 +457,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                     
                     org.apache.activemq.ActiveMQPrefetchPolicy a = new org.apache.activemq.ActiveMQPrefetchPolicy();
                     ProMap prefetchParams = (ProMap)temp.get(connection_params_prefetchPolicy);
-                    ProMap globalprefetchParams = BaseSPIManager.getMapProperty(connection_params_prefetchPolicy);
+                    ProMap globalprefetchParams = BaseSPIManager2.getMapProperty(connection_params_prefetchPolicy);
                     if(prefetchParams != globalprefetchParams)
 	                    BeanAccembleHelper.injectProperties(a, 
 	                    		globalprefetchParams,prefetchParams);
@@ -467,7 +467,7 @@ public class AMQConnectionFactory extends JMSConnectionFactory
                     instance_.setPrefetchPolicy(a);            
                     RedeliveryPolicy r = new RedeliveryPolicy();
                     ProMap redirectParams = (ProMap)temp.get(connection_params_redirectPolicy);
-                    ProMap globalredirectParams = BaseSPIManager.getMapProperty(connection_params_redirectPolicy);
+                    ProMap globalredirectParams = BaseSPIManager2.getMapProperty(connection_params_redirectPolicy);
                     if(redirectParams != globalredirectParams)
                     	BeanAccembleHelper.injectProperties(r,globalredirectParams, redirectParams);
                     else

@@ -16,7 +16,7 @@
 package org.frameworkset.spi.security;
 
 
-import org.frameworkset.spi.BaseSPIManager;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.remote.context.RequestContext;
 
 /**
@@ -82,7 +82,7 @@ public class SecurityContext implements java.io.Serializable{
 	    {
 	        if(securityManager != null)
 	            return securityManager;
-	        return securityManager = (SecurityManager)BaseSPIManager.getBeanObject("system.securityManager",new DummySecurityManager());
+	        return securityManager = (SecurityManager)BaseSPIManager2.getBeanObject("system.securityManager",new DummySecurityManager());
 	    }
 	}
 	

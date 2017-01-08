@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.frameworkset.log.BaseLogger;
-import org.frameworkset.spi.BaseSPIManager;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.Pro;
 import org.frameworkset.spi.assemble.ProMap;
 
@@ -141,7 +141,7 @@ public class ThreadPoolManagerFactory
         pro = new Pro();
         pro.setName("maxdelayTime");pro.setValue("4");
         defaultPoolparams.put("maxdelayTime", pro);
-        BaseSPIManager.addShutdownHook(new ShutdownThreadPools());
+        BaseSPIManager2.addShutdownHook(new ShutdownThreadPools());
 
     }
 
@@ -178,7 +178,7 @@ public class ThreadPoolManagerFactory
             poolExecutor = pools.get(threadpoolname);
             if (poolExecutor != null)
                 return poolExecutor;
-            ProMap poolparams = (ProMap) BaseSPIManager.getMapProperty(threadpoolname);
+            ProMap poolparams = (ProMap) BaseSPIManager2.getMapProperty(threadpoolname);
             if (poolparams == null)
             {
                 log.debug("Config for [" + threadpoolname + "] not found. defaultPoolparams will be used as follow:\n"

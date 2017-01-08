@@ -29,8 +29,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import org.frameworkset.spi.ApplicationContext;
 import org.frameworkset.spi.BaseApplicationContext;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.remote.serializable.Decoder;
 import org.frameworkset.spi.remote.serializable.Encoder;
 import org.frameworkset.spi.remote.serializable.SOADecoder;
@@ -446,7 +446,7 @@ public class Util
    }
    private static void init()
    {
-	   defaultContext = ApplicationContext.getApplicationContext();
+	   defaultContext = BaseSPIManager2.defaultContext;
 	   rpc_all_servers = defaultContext.getProperty("rpc.all.servers");
 	   
 	   rpc_startup_mode = defaultContext.getProperty("rpc.startup.mode","mannual");

@@ -16,7 +16,7 @@
 
 package org.frameworkset.spi.remote.http;
 
-import org.frameworkset.spi.ApplicationContext;
+import org.frameworkset.spi.BaseSPIManager2;
 
 /**
  * <p>Title: HttpUtil.java</p> 
@@ -30,7 +30,7 @@ import org.frameworkset.spi.ApplicationContext;
 public class HttpUtil {
 	 public static HttpBaseRPCIOHandler getHttpBaseRPCIOHandler()
 	   {
-		 return (HttpBaseRPCIOHandler)ApplicationContext.getApplicationContext().getBeanObject("rpc.http.RPCServerIoHandler");
+		 return (HttpBaseRPCIOHandler)BaseSPIManager2.getBeanObject("rpc.http.RPCServerIoHandler");
 	   }
 
 }

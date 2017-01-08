@@ -23,7 +23,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import org.apache.log4j.Logger;
 import org.frameworkset.spi.BaseApplicationContext;
-import org.frameworkset.spi.BaseSPIManager;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.ProMap;
 import org.frameworkset.spi.remote.RPCAddress;
 import org.frameworkset.spi.remote.Target;
@@ -87,7 +87,7 @@ public class NettyRPCServer
         {
             if(server != null)
                 return server;
-            NettyRPCServer server_ = (NettyRPCServer)BaseSPIManager.getBeanObject("rpc.netty.server");
+            NettyRPCServer server_ = (NettyRPCServer)BaseSPIManager2.getBeanObject("rpc.netty.server");
             
            
             server = server_;
@@ -154,7 +154,7 @@ public class NettyRPCServer
                 sb.setPipelineFactory(new NettyChannelPipelineFactory(conparams.getInt("maxFramgeLength_",NettyChannelPipelineFactory.maxFramgeLength_),
                                                                       conparams.getInt("estimatedLength_",NettyChannelPipelineFactory.estimatedLength_)));
 //                ChannelUpstreamHandler sh = null;
-//                sh = (ChannelUpstreamHandler)BaseSPIManager.getBeanObject(Util.rpc_netty_RPCServerIoHandler); 
+//                sh = (ChannelUpstreamHandler)BaseSPIManager2.getBeanObject(Util.rpc_netty_RPCServerIoHandler); 
 //                sb.getPipeline().addLast("decoder", new ObjectDecoder());
 //                sb.getPipeline().addLast("encoder", new ObjectEncoder());
 //                sb.getPipeline().addLast("handler", sh);

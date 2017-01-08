@@ -48,6 +48,7 @@ import org.apache.http.protocol.ResponseContent;
 import org.apache.http.protocol.ResponseDate;
 import org.apache.http.protocol.ResponseServer;
 import org.frameworkset.spi.ApplicationContext;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.ProMap;
 import org.frameworkset.spi.remote.RPCAddress;
 import org.frameworkset.spi.remote.SSLHelper;
@@ -255,7 +256,7 @@ public class HttpServer {
 					serverEventListener);
 			this.endpoint = this.ioReactor.listen(new InetSocketAddress(
 					ip, port));
-			ProMap ssls =  ApplicationContext.getApplicationContext().getMapProperty("rpc.protocol.http.ssl.server");
+			ProMap ssls =  BaseSPIManager2.getMapProperty("rpc.protocol.http.ssl.server");
             if(ssls == null)
             {
                 throw new Exception("启用了ssl模式， 但是没有指定rpc.protocol.http.ssl.server 参数，请检查文件org/frameworkset/spi/manager-rpc-http.xml是否正确设置了该参数。");
@@ -428,7 +429,7 @@ public class HttpServer {
 		{
 			if(server != null)
 				return server;
-			server = (HttpServer)ApplicationContext.getApplicationContext().getBeanObject("rpc.http.server");
+			server = (HttpServer)BaseSPIManager2.getBeanObject("rpc.http.server");
 			
 		}
 		

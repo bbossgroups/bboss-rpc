@@ -51,7 +51,7 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.frameworkset.soa.ObjectSerializable;
-import org.frameworkset.spi.ApplicationContext;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.ProMap;
 import org.frameworkset.spi.remote.RPCAddress;
 import org.frameworkset.spi.remote.RPCMessage;
@@ -126,7 +126,7 @@ public class Client {
                 new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
         
        
-			ProMap ssls = ApplicationContext.getApplicationContext()
+			ProMap ssls = BaseSPIManager2
 					.getMapProperty("rpc.protocol.http.ssl.client");
 			ssls = null;
 			if (ssls == null) {

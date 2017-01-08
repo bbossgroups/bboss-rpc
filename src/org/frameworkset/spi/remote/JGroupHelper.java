@@ -19,7 +19,7 @@ import java.net.UnknownHostException;
 import java.util.Vector;
 
 import org.apache.log4j.Logger;
-import org.frameworkset.spi.BaseSPIManager;
+import org.frameworkset.spi.BaseSPIManager2;
 
 import bboss.org.jgroups.Address;
 import bboss.org.jgroups.Channel;
@@ -326,13 +326,13 @@ public class JGroupHelper
                 log.info("Start remote service begin.");
                 channel = new JChannel(JGroupConfig.getClusterProperties());
                 channel.setOpt(Channel.AUTO_RECONNECT, Boolean.TRUE);
-                DefaultRemoteHandler remoteHander = (DefaultRemoteHandler) BaseSPIManager
+                DefaultRemoteHandler remoteHander = (DefaultRemoteHandler) BaseSPIManager2
                         .getBeanObject("rpc.server_object");
                 remoteDispatcher = new RpcDispatcher(channel, null, null, remoteHander);
                 channel.connect(REMOTE_CLUSTER_NAME);
                 clusterstarted = true;
                 log.info("Start remote service successed.");
-                BaseSPIManager.addShutdownHook(new ShutDownJGroup(this));
+                BaseSPIManager2.addShutdownHook(new ShutDownJGroup(this));
                 // try {
                 // Class r = Runtime.getRuntime().getClass();
                 // java.lang.reflect.Method m =

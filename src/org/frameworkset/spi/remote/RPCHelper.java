@@ -28,7 +28,7 @@ import java.util.Vector;
 
 import org.frameworkset.netty.NettyRPCServer;
 import org.frameworkset.spi.BaseApplicationContext;
-import org.frameworkset.spi.BaseSPIManager;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.ClientProxyContext;
 import org.frameworkset.spi.RemoteCallContext;
 import org.frameworkset.spi.remote.health.RPCValidator;
@@ -90,7 +90,7 @@ public class RPCHelper
             if(instance != null)
                 return instance;
             RPCHelper instance_ = new RPCHelper();
-            instance_.webserviceenabled = BaseSPIManager.getBooleanProperty("rpc.webservice.enable",false);
+            instance_.webserviceenabled = BaseSPIManager2.getBooleanProperty("rpc.webservice.enable",false);
             instance = instance_;		
 //            instance.startServers();
         }
@@ -1229,7 +1229,7 @@ public class RPCHelper
         }
         
     }
-    private static long rpc_request_timeout = BaseSPIManager.getIntProperty("rpc.request.timeout",60) * 1000;
+    private static long rpc_request_timeout = BaseSPIManager2.getIntProperty("rpc.request.timeout",60) * 1000;
     public static long getRPCRequestTimeout()
     {
         return rpc_request_timeout;

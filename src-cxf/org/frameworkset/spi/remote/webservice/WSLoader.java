@@ -30,6 +30,7 @@ import org.apache.cxf.jaxws.spi.ProviderImpl;
 import org.apache.log4j.Logger;
 import org.frameworkset.spi.ApplicationContext;
 import org.frameworkset.spi.BaseApplicationContext;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.Pro;
 import org.frameworkset.spi.assemble.ProList;
 import org.frameworkset.spi.assemble.ServiceProviderManager;
@@ -61,7 +62,7 @@ public class WSLoader {
 		 {
 	     	try {
 	     		
-					return  ApplicationContext.getApplicationContext().getBooleanProperty("rpc.webservice.enable",true);
+					return  BaseSPIManager2.getBooleanProperty("rpc.webservice.enable",true);
 				} catch (Exception e) {
 					return true;
 				}
@@ -188,7 +189,7 @@ public class WSLoader {
 	}
 	private static void loadDefaultWebService(ClassLoader classLoader)
 	{
-		 ProList webservices =  ApplicationContext.getApplicationContext().getListProperty("cxf.webservices.config")   ;
+		 ProList webservices =  BaseSPIManager2.getListProperty("cxf.webservices.config")   ;
          if(webservices != null)
          {
              for(int i = 0;i < webservices.size(); i ++)

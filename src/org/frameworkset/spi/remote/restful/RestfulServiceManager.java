@@ -16,7 +16,7 @@
 
 package org.frameworkset.spi.remote.restful;
 
-import org.frameworkset.spi.BaseSPIManager;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.remote.RPCHelper;
 import org.frameworkset.spi.remote.RemoteServiceID;
 
@@ -37,7 +37,7 @@ public class RestfulServiceManager {
 		
 	}
 	private void init(){
-		restfulServiceConvertor = (RestfulServiceConvertor)BaseSPIManager.getBeanObject("rpc.restful.convertor");
+		restfulServiceConvertor = (RestfulServiceConvertor)BaseSPIManager2.getBeanObject("rpc.restful.convertor");
 	}
 	public static RestfulServiceManager getRestfulServiceManager()
 	{
