@@ -25,6 +25,8 @@ import org.frameworkset.spi.ClientProxyContext;
 import org.frameworkset.spi.SPIException;
 import org.frameworkset.spi.assemble.Pro;
 import org.frameworkset.spi.assemble.ProviderManagerInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * 
  * <p>Title: DefaultRemoteHandler.java</p> 
@@ -37,7 +39,7 @@ import org.frameworkset.spi.assemble.ProviderManagerInfo;
  */
 
 public class DefaultRemoteHandler implements RemoteHandler{
-
+	private static Logger logger = LoggerFactory.getLogger(DefaultRemoteHandler.class);
     
     /**
      * 向所有的远程组件发送远程方法调用请求
@@ -71,9 +73,16 @@ public class DefaultRemoteHandler implements RemoteHandler{
 	        	
 	        	BaseApplicationContext context = BaseApplicationContext.getBaseApplicationContext(serviceID.getApplicationContext(),serviceID.getContainerType());
 	        	Pro p = context.getProBean(serviceID.getService());
-	        	if(!p.isEnablerpc())
+	        	if(p == null){
+	        		String msg = new StringBuilder().append("SPI Exception: service[").append( serviceID.getOrigineServiceID() ).append("] is not found in host.").toString();
+	        		logger.debug(msg);
+	        		throw new SPIException(msg);
+	        	}
+	        	else if(!p.isEnablerpc())
 	        	{
-	        		throw new SPIException("SPI Exception: service["+ serviceID.getOrigineServiceID() +"] is not an enabled  rpc service.");
+	        		String msg = new StringBuilder().append("SPI Exception: service[").append( serviceID.getOrigineServiceID()).append("] is not an rpc service.Please enbabled by set it's enablerpc=true").toString();
+	        		logger.debug(msg);
+	        		throw new SPIException(msg);
 	        	}
 	            instance = context.getBeanObject(serviceID.getService());
 	        }
@@ -82,8 +91,16 @@ public class DefaultRemoteHandler implements RemoteHandler{
 
 	        	BaseApplicationContext context = BaseApplicationContext.getBaseApplicationContext(serviceID.getApplicationContext(),serviceID.getContainerType());
 	        	ProviderManagerInfo providerManagerInfo = context.getServiceProviderManager().getProviderManagerInfo(serviceID.getService());
-	    		if (!providerManagerInfo.isEnablerpc()) 
-	    			throw new SPIException("SPI Exception: service["+ serviceID.getOrigineServiceID() +"] is not an enabled  rpc service.");
+	        	if(providerManagerInfo == null){
+	        		String msg = new StringBuilder().append("SPI Exception: service[").append( serviceID.getOrigineServiceID() ).append("] is not found in host.").toString();
+	        		logger.warn(msg);
+	        		throw new SPIException(msg);
+	        	}
+	        	else if (!providerManagerInfo.isEnablerpc()) {
+	        		String msg = new StringBuilder().append("SPI Exception: service[").append(  serviceID.getOrigineServiceID() ).append( "] is not an rpc service.Please enbabledS by set it's  enablerpc=true").toString();
+	        		logger.warn(msg);
+	    			throw new SPIException(msg);
+	        	}
 	            instance = context.getProvider(serviceID.getService(),serviceID.getProviderID());
 	        }
         }
