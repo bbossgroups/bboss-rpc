@@ -29,9 +29,8 @@ import javax.jms.ObjectMessage;
 import javax.jms.StreamMessage;
 import javax.jms.TextMessage;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.frameworkset.log.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -123,8 +122,7 @@ public class RequestDispatcher extends ReceiveDispatcher
 		    
 	}
 
-	private static final Log	LOG	= LogFactory
-											.getLog(RequestDispatcher.class);
+	private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(RequestDispatcher.class);
 
 	public BytesMessage createBytesMessage() throws JMSException
 	{

@@ -21,11 +21,12 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.BaseApplicationContext;
 import org.frameworkset.spi.SOAFileApplicationContext;
 import org.frameworkset.spi.assemble.Pro;
 import org.frameworkset.spi.assemble.ProMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>Title: RMIAssemble.java</p> 
@@ -37,7 +38,7 @@ import org.frameworkset.spi.assemble.ProMap;
  * @version 1.0
  */
 public class RMIAssemble {
-	private static final Logger logger = Logger.getLogger(RMIAssemble.class);
+	private static final Logger logger = LoggerFactory.getLogger(RMIAssemble.class);
 	
 	private static Map<String,Pro> tracks = new HashMap<String,Pro>();
 	private static int port = 1099;
@@ -132,7 +133,7 @@ public class RMIAssemble {
 			loaderContextRMIServices((BaseApplicationContext) context
 					.getBeanObject("webapplicationcontext"));
 		} catch (Exception e) {
-			logger.warn(e);
+			logger.warn("",e);
 		}
 	}
 	

@@ -30,10 +30,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.SOAFileApplicationContext;
 import org.frameworkset.spi.assemble.ProMap;
 import org.frameworkset.util.ResourceUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>Title: RMIUtil.java</p> 
@@ -46,7 +47,7 @@ import org.frameworkset.util.ResourceUtils;
  */
 public class RMIUtil {
 	public static boolean enved = false;
-	private static Logger log = Logger.getLogger(RMIUtil.class);
+	private static Logger log = LoggerFactory.getLogger(RMIUtil.class);
 	private static java.util.concurrent.locks.ReentrantLock evnlock = new ReentrantLock();
 	private static long connectiontimeout = 60 * 1000;
 	private static boolean connectiontimeoutsetted = false;
@@ -219,7 +220,7 @@ public class RMIUtil {
 			LocateRegistry.createRegistry(PORT);
 			porttraces.put(key, traceobject);
 		} catch (Exception e) {
-			log.warn(e);
+			log.warn("",e);
 		}
 	}
 	

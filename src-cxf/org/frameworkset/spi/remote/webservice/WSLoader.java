@@ -27,13 +27,13 @@ import javax.xml.ws.soap.SOAPBinding;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.jaxws.spi.ProviderImpl;
-import org.apache.log4j.Logger;
-import org.frameworkset.spi.ApplicationContext;
 import org.frameworkset.spi.BaseApplicationContext;
 import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.Pro;
 import org.frameworkset.spi.assemble.ProList;
 import org.frameworkset.spi.assemble.ServiceProviderManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 
@@ -48,7 +48,7 @@ import org.frameworkset.spi.assemble.ServiceProviderManager;
  * @version 1.0
  */
 public class WSLoader {
-	private static final Logger logger = Logger.getLogger(WSLoader.class);
+	private static final Logger logger = LoggerFactory.getLogger(WSLoader.class);
 	
 	 
 	private static boolean loadDefaultWebServiceOk = false;

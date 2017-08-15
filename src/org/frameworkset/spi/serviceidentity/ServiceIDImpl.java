@@ -18,7 +18,6 @@ package org.frameworkset.spi.serviceidentity;
 
 import java.util.StringTokenizer;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.netty.NettyRPCServer;
 import org.frameworkset.spi.remote.JGroupHelper;
 import org.frameworkset.spi.remote.RPCAddress;
@@ -30,6 +29,8 @@ import org.frameworkset.spi.remote.http.HttpServer;
 import org.frameworkset.spi.remote.mina.server.MinaRPCServer;
 import org.frameworkset.spi.remote.restful.RestfulServiceManager;
 import org.frameworkset.spi.remote.rmi.RMIServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bboss.org.jgroups.Address;
 
@@ -43,7 +44,7 @@ import bboss.org.jgroups.Address;
  * @version 1.0
  */
 public class ServiceIDImpl extends BaseServiceIDImpl implements RemoteServiceID{
-	private static Logger log = Logger.getLogger(ServiceIDImpl.class);
+	private static Logger log = LoggerFactory.getLogger(ServiceIDImpl.class);
 	protected transient Target target;
 	protected String infType;
 	/**

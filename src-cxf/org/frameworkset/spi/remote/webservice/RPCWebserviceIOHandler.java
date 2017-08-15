@@ -16,8 +16,6 @@
 
 package org.frameworkset.spi.remote.webservice;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.frameworkset.spi.remote.BaseFutureCall;
 import org.frameworkset.spi.remote.BaseRPCIOHandler;
 import org.frameworkset.spi.remote.RPCAddress;
@@ -25,6 +23,8 @@ import org.frameworkset.spi.remote.RPCMessage;
 import org.frameworkset.spi.remote.RequestHandler;
 import org.frameworkset.spi.remote.Target;
 import org.frameworkset.spi.serviceidentity.TargetImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -40,7 +40,7 @@ public class RPCWebserviceIOHandler extends BaseRPCIOHandler {
 //	ThreadPoolExecutor threadPool = new ThreadPoolExecutor();
 	
     
-    protected static final Log log = LogFactory.getLog(RPCWebserviceIOHandler.class);
+    protected static final Logger log = LoggerFactory.getLogger(RPCWebserviceIOHandler.class);
 
     
 

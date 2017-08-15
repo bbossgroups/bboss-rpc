@@ -21,7 +21,6 @@ import javax.jms.Message;
 import javax.jms.ObjectMessage;
 import javax.jms.TextMessage;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.mq.JMSConnectionFactory;
 import org.frameworkset.mq.JMSTemplate;
 import org.frameworkset.spi.remote.BaseFutureCall;
@@ -33,6 +32,8 @@ import org.frameworkset.spi.remote.RequestHandler;
 import org.frameworkset.spi.remote.Target;
 import org.frameworkset.spi.remote.Util;
 import org.frameworkset.spi.serviceidentity.TargetImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -54,7 +55,7 @@ import org.frameworkset.spi.serviceidentity.TargetImpl;
  */
 public class RPCJMSIOHandler extends BaseRPCIOHandler implements org.frameworkset.spi.InitializingBean,org.frameworkset.spi.DisposableBean
 {
-    private static final Logger log = Logger.getLogger(RPCJMSIOHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(RPCJMSIOHandler.class);
 
 //    private javax.jms.Session session;
 

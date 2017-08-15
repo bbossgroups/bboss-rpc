@@ -9,10 +9,10 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.frameworkset.spi.remote.Global;
 import org.frameworkset.spi.remote.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -35,7 +35,7 @@ public class ClassConfigurator {
     //this is where we store magic numbers
     private static final Map<Class,Short> classMap=new ConcurrentHashMap<Class,Short>(); // key=Class, value=magic number
     private static final Map<Short,Class> magicMap=new ConcurrentHashMap<Short,Class>(); // key=magic number, value=Class
-    protected static final Log log=LogFactory.getLog(ClassConfigurator.class);
+    protected static final Logger log = LoggerFactory.getLogger(ClassConfigurator.class);
 
 
     static {

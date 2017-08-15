@@ -23,8 +23,8 @@ import javax.jms.Session;
 import javax.jms.Topic;
 import javax.jms.TopicSubscriber;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -46,7 +46,7 @@ import org.apache.commons.logging.LogFactory;
  */
 public class ReceiveDispatcher
 {
-    private static final Log LOG = LogFactory.getLog(ReceiveDispatcher.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ReceiveDispatcher.class);
 
     protected Session session;
 

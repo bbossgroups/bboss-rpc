@@ -24,7 +24,6 @@ import java.security.GeneralSecurityException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.log4j.Logger;
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
@@ -39,6 +38,8 @@ import org.frameworkset.spi.remote.Target;
 import org.frameworkset.spi.remote.Util;
 import org.frameworkset.spi.remote.mina.MinaUtil;
 import org.frameworkset.spi.remote.mina.client.ClinentTransport;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -53,7 +54,7 @@ import org.frameworkset.spi.remote.mina.client.ClinentTransport;
 public class MinaRPCServer 
 {
 //	public static final int PORT = 33789;
-    private static Logger log = Logger.getLogger(MinaRPCServer.class);
+    private static Logger log = LoggerFactory.getLogger(MinaRPCServer.class);
 	public ProMap conparams = null;
 //	public static boolean defaultlongconnection ;
 	

@@ -18,10 +18,11 @@ package org.frameworkset.spi.security;
 
 import java.security.Security;
 
-import org.apache.log4j.Logger;
 import org.jasypt.encryption.pbe.PBEByteEncryptor;
 import org.jasypt.encryption.pbe.StandardPBEByteEncryptor;
 import org.jasypt.encryption.pbe.config.SimplePBEConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -35,7 +36,7 @@ import org.jasypt.encryption.pbe.config.SimplePBEConfig;
  */
 public class SimpleEncryptModule implements EncryptModule
 {
-	private static Logger log = Logger.getLogger(SimpleEncryptModule.class);
+	private static Logger log = LoggerFactory.getLogger(SimpleEncryptModule.class);
 
 	PBEByteEncryptor  encryptor = null;
     

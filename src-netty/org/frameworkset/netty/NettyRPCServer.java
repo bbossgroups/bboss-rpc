@@ -21,7 +21,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.BaseApplicationContext;
 import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.ProMap;
@@ -33,6 +32,8 @@ import org.jboss.netty.channel.group.ChannelGroup;
 import org.jboss.netty.channel.group.ChannelGroupFuture;
 import org.jboss.netty.channel.group.DefaultChannelGroup;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -48,7 +49,7 @@ public class NettyRPCServer
 {
     private Executor bossExecutor;
     private Executor workerExecutor;
-    private static Logger log = Logger.getLogger(NettyRPCServer.class);
+    private static Logger log = LoggerFactory.getLogger(NettyRPCServer.class);
     public ProMap conparams = null;
     final static ChannelGroup allChannels = new DefaultChannelGroup("netty-server" );   
 //  public static boolean defaultlongconnection ;

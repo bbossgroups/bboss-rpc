@@ -17,7 +17,8 @@ package org.frameworkset.thread;
 
 
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -43,7 +44,7 @@ import org.apache.log4j.Logger;
  */
 public class WaitPolicy implements RejectedExecutionHandler
 {
-    private static Logger log = Logger.getLogger(WaitPolicy.class);
+    private static Logger log = LoggerFactory.getLogger(WaitPolicy.class);
     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor)
     {
 

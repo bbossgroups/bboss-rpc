@@ -23,10 +23,11 @@ import java.io.ObjectOutput;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.soa.annotation.ExcludeField;
 import org.frameworkset.spi.security.SecurityContext;
 import org.frameworkset.util.ClassUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 
@@ -66,7 +67,7 @@ public class RPCMethodCall implements Externalizable
     /** To carry arbitrary data with a method call, data needs to be serializable if sent across the wire */
 //    protected Map payload;
 
-    protected static final Logger log=Logger.getLogger(RPCMethodCall.class);
+    protected static final Logger log=LoggerFactory.getLogger(RPCMethodCall.class);
 
 //    /** Which mode to use. */
 //    protected short mode=OLD;

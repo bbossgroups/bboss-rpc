@@ -16,10 +16,6 @@
 
 package org.frameworkset.netty;
 
-import static org.jboss.netty.channel.Channels.pipeline;
-
-import javax.net.ssl.SSLEngine;
-
 import org.frameworkset.spi.assemble.ProMap;
 import org.frameworkset.spi.remote.Util;
 import org.jboss.netty.channel.ChannelPipeline;
@@ -28,6 +24,10 @@ import org.jboss.netty.channel.ChannelUpstreamHandler;
 import org.jboss.netty.handler.codec.serialization.ObjectDecoder;
 import org.jboss.netty.handler.codec.serialization.ObjectEncoder;
 import org.jboss.netty.handler.ssl.SslHandler;
+
+import javax.net.ssl.SSLEngine;
+
+import static org.jboss.netty.channel.Channels.pipeline;
 
 
 /**

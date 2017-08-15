@@ -26,7 +26,8 @@ import java.net.URL;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -47,7 +48,7 @@ import org.xml.sax.SAXParseException;
  * @version 1.0
  */
 public class PropertyConfigurator {
-	 private static Logger logger_=Logger.getLogger(PropertyConfigurator.class);
+	 private static Logger logger_=LoggerFactory.getLogger(PropertyConfigurator.class);
 	   private Object objToConfigure_;
 	   private static final String ROOT="mbean";
 	   private static final String ATTR="attribute";

@@ -18,9 +18,10 @@ package org.frameworkset.spi.remote;
 
 import java.lang.reflect.Method;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.remote.context.RequestContext;
 import org.frameworkset.spi.security.SecurityContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 
@@ -37,7 +38,7 @@ public class RPCRequestHandler implements RequestHandler
 {
 	private Object server_obj;
 	private Method callMethod ;
-	 protected final Logger log=Logger.getLogger(RPCRequestHandler.class);
+	 protected final Logger log=LoggerFactory.getLogger(RPCRequestHandler.class);
 	public RPCRequestHandler(Object server_obj)
 	{
 		this.server_obj = server_obj;

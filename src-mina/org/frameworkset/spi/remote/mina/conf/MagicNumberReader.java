@@ -15,21 +15,22 @@ import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.frameworkset.spi.remote.Util;
-import bboss.org.jgroups.ChannelException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import bboss.org.jgroups.ChannelException;
 
 public class MagicNumberReader {
     public static final String MAGIC_NUMBER_FILE="mina-magic-map.xml";
 
     public String mMagicNumberFile=MAGIC_NUMBER_FILE;
 
-    protected static final Log log=LogFactory.getLog(MagicNumberReader.class);
+    protected static final Logger log = LoggerFactory.getLogger(MagicNumberReader.class);
 
     public void setFilename(String file) {
         mMagicNumberFile=file;

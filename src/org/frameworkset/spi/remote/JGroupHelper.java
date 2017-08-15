@@ -18,8 +18,9 @@ package org.frameworkset.spi.remote;
 import java.net.UnknownHostException;
 import java.util.Vector;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.BaseSPIManager2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bboss.org.jgroups.Address;
 import bboss.org.jgroups.Channel;
@@ -49,7 +50,7 @@ import bboss.org.jgroups.stack.IpAddress;
  */
 public class JGroupHelper
 {
-    private static final Logger log = Logger.getLogger(JGroupHelper.class);
+    private static final Logger log = LoggerFactory.getLogger(JGroupHelper.class);
 
     RpcDispatcher remoteDispatcher;
 

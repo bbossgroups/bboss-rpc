@@ -36,7 +36,8 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 
@@ -60,7 +61,7 @@ import org.apache.log4j.Logger;
  */
 public class SSLHelper
 {
-    private static final Logger log = Logger.getLogger(SSLHelper.class);
+    private static final Logger log = LoggerFactory.getLogger(SSLHelper.class);
 
     /**
      * Protocol to use.

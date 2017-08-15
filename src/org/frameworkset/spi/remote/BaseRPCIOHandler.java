@@ -22,10 +22,11 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.security.SecurityContext;
 import org.frameworkset.thread.ThreadPoolExecutor;
 import org.frameworkset.thread.ThreadPoolManagerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bboss.org.jgroups.util.Buffer;
 
@@ -84,7 +85,7 @@ public abstract class BaseRPCIOHandler implements RPCIOHandler
         return name;
     }
 
-    protected static final Logger log = Logger.getLogger(BaseRPCIOHandler.class);
+    protected static final Logger log = LoggerFactory.getLogger(BaseRPCIOHandler.class);
 
     /**
      * The table of pending requests (keys=Long (request IDs), values=

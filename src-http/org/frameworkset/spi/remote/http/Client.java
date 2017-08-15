@@ -49,7 +49,6 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
 import org.frameworkset.soa.ObjectSerializable;
 import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.ProMap;
@@ -57,6 +56,8 @@ import org.frameworkset.spi.remote.RPCAddress;
 import org.frameworkset.spi.remote.RPCMessage;
 import org.frameworkset.spi.remote.SSLHelper;
 import org.frameworkset.spi.serviceidentity.TargetImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 //import com.thoughtworks.xstream.XStream;
 
@@ -84,7 +85,7 @@ public class Client {
 	static HttpParams params =  null;
 	static ProMap conparams = HttpServer.getHttpServer().getParams();
 	static boolean usepool = conparams.getBoolean("http.usepool", false);
-	private static Logger log = Logger.getLogger(Client.class);
+	private static Logger log = LoggerFactory.getLogger(Client.class);
 	private static ClientConnectionManager clientconnectionManager;
 	static
 	{

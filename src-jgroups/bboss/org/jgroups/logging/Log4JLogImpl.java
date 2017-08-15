@@ -1,7 +1,7 @@
 package bboss.org.jgroups.logging;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Logger that delivers messages to a Log4J logger
@@ -17,23 +17,23 @@ public class Log4JLogImpl implements Log {
     private final Logger logger;
 
     public Log4JLogImpl(String category) {
-        logger = Logger.getLogger(category);
+        logger = LoggerFactory.getLogger(category);
     }
 
     public Log4JLogImpl(Class<?> category) {
-        logger = Logger.getLogger(category);
+        logger = LoggerFactory.getLogger(category);
     }
 
     public boolean isFatalEnabled() {
-        return logger.isEnabledFor(Level.FATAL);
+        return logger.isErrorEnabled();
     }
 
     public boolean isErrorEnabled() {
-        return logger.isEnabledFor(Level.ERROR);
+        return logger.isErrorEnabled();
     }
 
     public boolean isWarnEnabled() {
-        return logger.isEnabledFor(Level.WARN);
+        return logger.isWarnEnabled();
     }
 
     public boolean isInfoEnabled() {
@@ -49,90 +49,91 @@ public class Log4JLogImpl implements Log {
     }
 
     public void debug(String msg) {
-        logger.log(FQCN, Level.DEBUG, msg, null);
+        logger.debug(  msg);
     }
 
     public void debug(String msg, Throwable throwable) {
-        logger.log(FQCN, Level.DEBUG, msg, throwable);
+        logger.debug(  msg, throwable);
     }
 
     public void error(String msg) {
-        logger.log(FQCN, Level.ERROR, msg, null);
+        logger.error(msg);
     }
 
     public void error(String msg, Throwable throwable) {
-        logger.log(FQCN, Level.ERROR, msg, throwable);
+        logger.error(  msg, throwable);
     }
 
     public void fatal(String msg) {
-        logger.log(FQCN, Level.FATAL, msg, null);
+        logger.error(msg);
     }
 
     public void fatal(String msg, Throwable throwable) {
-        logger.log(FQCN, Level.FATAL, msg, throwable);
+        logger.error( msg, throwable);
     }
 
     public void info(String msg) {
-        logger.log(FQCN, Level.INFO, msg, null);
+        logger.info( msg);
     }
 
     public void info(String msg, Throwable throwable) {
-        logger.log(FQCN, Level.INFO, msg, throwable);
+        logger.info( msg, throwable);
     }
 
     public void trace(Object msg) {
-        logger.log(FQCN, Level.TRACE, msg, null);
+        logger.trace( String.valueOf(msg));
     }
 
     public void trace(Object msg, Throwable throwable) {
-        logger.log(FQCN, Level.TRACE, msg, throwable);
+        logger.trace( String.valueOf( msg), throwable);
     }
 
     public void trace(String msg) {
-        logger.log(FQCN, Level.TRACE, msg, null);
+        logger.trace(  msg);
     }
 
     public void trace(String msg, Throwable throwable) {
-        logger.log(FQCN, Level.TRACE, msg, throwable);
+        logger.trace(  msg, throwable);
     }
 
     public void warn(String msg) {
-        logger.log(FQCN, Level.WARN, msg, null);
+        logger.warn( msg);
     }
 
     public void warn(String msg, Throwable throwable) {
-        logger.log(FQCN, Level.WARN, msg, throwable);
+        logger.warn( msg, throwable);
     }
 
     public String getLevel() {
-        Level level = logger.getLevel();
-        return level != null ? level.toString() : "off";
+//       
+//        return level != null ? level.toString() : "off";
+    	return null;
     }
 
     public void setLevel(String level) {
-        Level new_level = strToLevel(level);
-        if (new_level != null)
-            logger.setLevel(new_level);
+//        Level new_level = strToLevel(level);
+//        if (new_level != null)
+//            logger.setLevel(new_level);
     }
 
-    private static Level strToLevel(String level) {
-        if (level == null)
-            return null;
-        level = level.toLowerCase().trim();
-        if (level.equals("fatal"))
-            return Level.FATAL;
-        if (level.equals("error"))
-            return Level.ERROR;
-        if (level.equals("warn"))
-            return Level.WARN;
-        if (level.equals("warning"))
-            return Level.WARN;
-        if (level.equals("info"))
-            return Level.INFO;
-        if (level.equals("debug"))
-            return Level.DEBUG;
-        if (level.equals("trace"))
-            return Level.TRACE;
-        return null;
-    }
+//    private static Level strToLevel(String level) {
+//        if (level == null)
+//            return null;
+//        level = level.toLowerCase().trim();
+//        if (level.equals("fatal"))
+//            return Level.FATAL;
+//        if (level.equals("error"))
+//            return Level.ERROR;
+//        if (level.equals("warn"))
+//            return Level.WARN;
+//        if (level.equals("warning"))
+//            return Level.WARN;
+//        if (level.equals("info"))
+//            return Level.INFO;
+//        if (level.equals("debug"))
+//            return Level.DEBUG;
+//        if (level.equals("trace"))
+//            return Level.TRACE;
+//        return null;
+//    }
 }

@@ -2,8 +2,9 @@ package org.frameworkset.thread;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.thread.ThreadPoolManagerFactory.WaitParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -20,7 +21,7 @@ import org.frameworkset.thread.ThreadPoolManagerFactory.WaitParam;
  */
 public abstract class DelayThread implements RejectTask
 {
-    private static final Logger log = Logger.getLogger(DelayThread.class);
+    private static final Logger log = LoggerFactory.getLogger(DelayThread.class);
 //    protected long initdelayTime = 1 * 1000;
 //    protected String delayTime_s ;
 //   

@@ -18,9 +18,9 @@ package org.frameworkset.spi.remote;
 
 import java.io.Serializable;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.frameworkset.spi.security.SecurityContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -311,7 +311,7 @@ public class RPCMessage implements Serializable
         return "src_addr=" + src_addr + ",headers=" + headers;
     }
 
-    protected static final Log log = LogFactory.getLog(RPCMessage.class);
+    protected static final Logger log = LoggerFactory.getLogger(RPCMessage.class);
 
 	public static final int OOB = 2;
     

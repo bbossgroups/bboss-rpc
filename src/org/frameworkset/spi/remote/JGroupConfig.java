@@ -15,7 +15,8 @@
  */
 package org.frameworkset.spi.remote;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -31,7 +32,7 @@ import org.w3c.dom.NodeList;
  * @version 1.0
  */
 public class JGroupConfig {
-	private static final Logger log = Logger.getLogger(JGroupConfig.class);
+	private static final Logger log = LoggerFactory.getLogger(JGroupConfig.class);
 	protected String cluster_props = null;
 	
 	/**

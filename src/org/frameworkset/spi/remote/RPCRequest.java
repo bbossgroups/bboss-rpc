@@ -25,9 +25,9 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.frameworkset.spi.remote.annotations.GuardedBy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -49,7 +49,7 @@ import org.frameworkset.spi.remote.annotations.GuardedBy;
  */
 public class RPCRequest implements java.io.Serializable, ResponseCollector
 {
-    private static final Log log = LogFactory.getLog(RPCRequest.class);
+    private static final Logger log = LoggerFactory.getLogger(RPCRequest.class);
 
     /** return only first response */
     public static final int GET_FIRST = 1;
@@ -195,7 +195,7 @@ public class RPCRequest implements java.io.Serializable, ResponseCollector
                             rsp.setReceived(responseReceived);
                             if (log.isTraceEnabled())
                                 log.trace(new StringBuilder("received response for request ").append(id)
-                                        .append(", sender=").append(sender).append(", val=").append(response_value));
+                                        .append(", sender=").append(sender).append(", val=").append(response_value).toString());
                         }
                         done = rsp_filter != null && !rsp_filter.needMoreResponses();
     

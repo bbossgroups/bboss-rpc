@@ -25,9 +25,10 @@ import javax.xml.ws.Endpoint;
 import javax.xml.ws.soap.SOAPBinding;
 
 import org.apache.cxf.jaxws.spi.ProviderImpl;
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.BaseApplicationContext;
 import org.frameworkset.spi.assemble.Pro;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.frameworkset.util.SimpleStringUtil;
 
@@ -46,7 +47,7 @@ public final class WebServicePublisherUtil {
 	 * 
 	 */
 	private static Map<String,Pro> tracks = new HashMap<String,Pro>();
-	private static final Logger logger = Logger.getLogger(WebServicePublisherUtil.class);
+	private static final Logger logger = LoggerFactory.getLogger(WebServicePublisherUtil.class);
 	public static void loaderContextWebServices(BaseApplicationContext context,ClassLoader classLoader)
 	{
 		if(context == null)

@@ -19,13 +19,14 @@ package org.frameworkset.spi.remote.rmi;
 import java.security.Permission;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.ApplicationContext;
 import org.frameworkset.spi.assemble.ProMap;
 import org.frameworkset.spi.remote.BaseRPCIOHandler;
 import org.frameworkset.spi.remote.RPCAddress;
 import org.frameworkset.spi.remote.Target;
 import org.frameworkset.spi.remote.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 
@@ -50,7 +51,7 @@ import org.frameworkset.spi.remote.Util;
 public class RMIServer {
 
 	public int PORT = 1099;
-	private static Logger log = Logger.getLogger(RMIServer.class);
+	private static Logger log = LoggerFactory.getLogger(RMIServer.class);
 
 	private String permission = null;
 

@@ -22,10 +22,11 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.spi.RemoteCallContext;
 import org.frameworkset.spi.remote.BaseRPCIOHandler.Marshaller2;
 import org.frameworkset.spi.security.SecurityContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -82,7 +83,7 @@ public final class RPCClient
 	}
 	
 	
-	protected final Logger			log				= Logger.getLogger(getClass());
+	protected final Logger			log				= LoggerFactory.getLogger(getClass());
 
 	
 
@@ -207,7 +208,7 @@ public final class RPCClient
 		{		
 			log.info(new StringBuilder("destination list of ")
 						.append(method_call.getMethodName())
-						.append("() is empty: no need to send message"));
+						.append("() is empty: no need to send message").toString());
 			return new RPCResponseList();
 		}
 		byte[] buf = null;
@@ -217,7 +218,7 @@ public final class RPCClient
 		log.info(new StringBuilder("dests=").append(dests)
 					.append(", method_call=").append(method_call)
 					.append(", resultMode=").append(resultMode).append(", timeout=")
-					.append(timeout));
+					.append(timeout).toString());
 		if(!BaseRPCIOHandler.useOOB)
 		{
 			try

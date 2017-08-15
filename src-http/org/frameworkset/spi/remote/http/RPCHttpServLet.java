@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.frameworkset.soa.ObjectSerializable;
-import org.frameworkset.spi.ApplicationContext;
+import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.remote.BaseRPCIOHandler;
 import org.frameworkset.spi.remote.RPCMessage;
 
@@ -55,8 +55,7 @@ public class RPCHttpServLet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	BaseRPCIOHandler ioHandler = (BaseRPCIOHandler) ApplicationContext
-			.getApplicationContext().getBeanObject(
+	BaseRPCIOHandler ioHandler = (BaseRPCIOHandler) BaseSPIManager2.getDefaultApplicationContext().getBeanObject(
 					"rpc.application.server.RPCServerIoHandler");
 
 	@Override

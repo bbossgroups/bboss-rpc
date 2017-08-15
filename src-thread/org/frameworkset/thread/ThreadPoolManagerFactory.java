@@ -23,11 +23,12 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
 import org.frameworkset.log.BaseLogger;
 import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.Pro;
 import org.frameworkset.spi.assemble.ProMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -97,7 +98,7 @@ public class ThreadPoolManagerFactory
      * "org.frameworkset.mq.transfer.send.SendBigData$WaiterFailedHandler"/>
      * </map> </property>
      */
-    private static final Logger log = Logger.getLogger(ThreadPoolManagerFactory.class);
+    private static final Logger log = LoggerFactory.getLogger(ThreadPoolManagerFactory.class);
 
     private static Map<String, InnerThreadPoolExecutor> pools = new HashMap<String, InnerThreadPoolExecutor>();
 

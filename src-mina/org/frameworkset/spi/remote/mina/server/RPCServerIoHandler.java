@@ -17,7 +17,6 @@
 package org.frameworkset.spi.remote.mina.server;
 
 
-import org.apache.log4j.Logger;
 import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
@@ -31,6 +30,8 @@ import org.frameworkset.spi.remote.RequestHandler;
 import org.frameworkset.spi.remote.Target;
 import org.frameworkset.spi.remote.Util;
 import org.frameworkset.spi.serviceidentity.TargetImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -61,7 +62,7 @@ public class RPCServerIoHandler extends BaseRPCIOHandler implements RPCIOHandler
 //        return name;
 //    }
 
-    protected static final Logger log = Logger.getLogger(RPCServerIoHandler.class);
+    protected static final Logger log = LoggerFactory.getLogger(RPCServerIoHandler.class);
 
 //    /**
 //     * The table of pending requests (keys=Long (request IDs), values=
