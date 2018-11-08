@@ -108,7 +108,8 @@ dependencies {
             [group: 'com.bbossgroups', name: 'bboss-util', version: "${BBOSS_VERSION}", transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-core', version: "${BBOSS_VERSION}", transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-soa', version: "${BBOSS_VERSION}", transitive: false],
-            
+			[group: 'com.bbossgroups', name: 'bboss-http', version: "${BBOSS_VERSION}", transitive: true],
+
 //[group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25', transitive: false],
            	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25', transitive: true],      
             [group: 'oro', name: 'oro', version: '2.0.8', transitive: false],         
@@ -123,11 +124,11 @@ dependencies {
             [group: 'bsh', name: 'bsh', version: '2.0b1', transitive: false],
             [group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1', transitive: false],
              
-            [group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.0.1', transitive: false],
-            [group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.0.1', transitive: false],
-            [group: 'org.apache.httpcomponents', name: 'httpcore-nio', version: '4.0.1', transitive: false],
-            [group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.1.3', transitive: false],
-            [group: 'commons-codec', name: 'commons-codec', version: '1.10', transitive: false],
+//            [group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.0.1', transitive: false],
+//            [group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.0.1', transitive: false],
+            [group: 'org.apache.httpcomponents', name: 'httpcore-nio', version: '4.4.5', transitive: false],
+//            [group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.1.3', transitive: false],
+//            [group: 'commons-codec', name: 'commons-codec', version: '1.10', transitive: false],
            [group: 'com.ibm.icu', name: 'icu4j', version: '2.6.1', transitive: false],
             [group: 'org.jasypt', name: 'jasypt', version: '1.9.2', transitive: false],
            
