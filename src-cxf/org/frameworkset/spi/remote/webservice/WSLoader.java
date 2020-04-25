@@ -16,14 +16,6 @@
 
 package org.frameworkset.spi.remote.webservice;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.net.URL;
-
-import javax.servlet.ServletConfig;
-import javax.xml.ws.Endpoint;
-import javax.xml.ws.soap.SOAPBinding;
-
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.jaxws.spi.ProviderImpl;
@@ -34,6 +26,13 @@ import org.frameworkset.spi.assemble.ProList;
 import org.frameworkset.spi.assemble.ServiceProviderManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.servlet.ServletConfig;
+import javax.xml.ws.Endpoint;
+import javax.xml.ws.soap.SOAPBinding;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.URL;
 
 
 
@@ -250,8 +249,8 @@ public class WSLoader {
 //			org.frameworkset.spi.BaseApplicationContext context = org.frameworkset.spi.DefaultApplicationContext
 //					.getApplicationContext("org/frameworkset/spi/ws/webserivce-modules.xml");
 			Class clas = Class.forName("org.frameworkset.web.servlet.support.WebApplicationContextUtils");
-			Method m = clas.getMethod("getWebApplicationContext", null);
-			org.frameworkset.spi.BaseApplicationContext context = (BaseApplicationContext)m.invoke(null, null);
+			Method m = clas.getMethod("getWebApplicationContext");
+			org.frameworkset.spi.BaseApplicationContext context = (BaseApplicationContext)m.invoke(null);
 			if(context == null)
 			{
 				WSLoader.loadMvcWebServiceOk = false;
@@ -265,11 +264,11 @@ public class WSLoader {
 	  private static ClassLoader getTCL() throws IllegalAccessException, InvocationTargetException {
 	        Method method = null;
 	        try {
-	            method = (java.lang.Thread.class).getMethod("getContextClassLoader", null);
+	            method = (java.lang.Thread.class).getMethod("getContextClassLoader");
 	        } catch (NoSuchMethodException e) {
 	            return null;
 	        }
-	        return (ClassLoader)method.invoke(Thread.currentThread(), null);
+	        return (ClassLoader)method.invoke(Thread.currentThread());
 	    }
 	public static boolean fileexist(String configFile)
 	{/////
