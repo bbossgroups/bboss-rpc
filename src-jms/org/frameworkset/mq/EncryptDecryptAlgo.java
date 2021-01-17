@@ -6,9 +6,9 @@ package org.frameworkset.mq;
  * <p>Title: EncryptDecryptAlgo.java</p>
  * <p>Description:简单的加密和解密算法 </p>
  * <p>Copyright: Copyright (c) 2009</p>
- * <p>Company: 湖南科创信息股份有限公司</p>
+ * <p>Company: </p>
  * @Date May 17, 2009
- * @author xian.liu
+ * @author
  * @version 1.0
  */
 public class EncryptDecryptAlgo
