@@ -111,7 +111,7 @@ dependencies {
 			[group: 'com.bbossgroups', name: 'bboss-http', version: "${BBOSS_VERSION}", transitive: true],
 
 //[group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25', transitive: false],
-           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.32', transitive: true],
+           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36', transitive: true],
             [group: 'oro', name: 'oro', version: '2.0.8', transitive: false],         
             [group: 'cglib', name: 'cglib-nodep', version: '3.1', transitive: false],
               [group: 'commons-lang', name: 'commons-lang', version: '2.6', transitive: false],
