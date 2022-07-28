@@ -16,16 +16,11 @@
 
 package org.frameworkset.netty;
 
-import java.net.InetSocketAddress;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-import java.util.concurrent.locks.ReentrantLock;
-
-import org.frameworkset.spi.BaseApplicationContext;
 import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.assemble.ProMap;
 import org.frameworkset.spi.remote.RPCAddress;
 import org.frameworkset.spi.remote.Target;
+import org.frameworkset.util.shutdown.ShutdownUtil;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.group.ChannelGroup;
@@ -34,6 +29,11 @@ import org.jboss.netty.channel.group.DefaultChannelGroup;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.InetSocketAddress;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 /**
@@ -184,7 +184,7 @@ public class NettyRPCServer
                 
                 System.out.println("Netty server is listenig at port " + PORT);
                 System.out.println("Netty server started.");
-                BaseApplicationContext.addShutdownHook(new ShutDownNettyServer(this));
+                ShutdownUtil.addShutdownHook(new ShutDownNettyServer(this));
                 this.started = true;
             }
             catch(Exception e)

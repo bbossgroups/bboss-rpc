@@ -15,21 +15,14 @@ package org.frameworkset.spi.remote;
  *  See the License for the specific language governing permissions and
  *  limitations under the License.  
  */
-import java.lang.reflect.Method;
-import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
-import java.util.Vector;
-
+import bboss.org.jgroups.Address;
+import bboss.org.jgroups.blocks.GroupRequest;
+import bboss.org.jgroups.blocks.RpcDispatcher;
+import bboss.org.jgroups.stack.IpAddress;
+import bboss.org.jgroups.util.Rsp;
+import bboss.org.jgroups.util.RspList;
 import org.frameworkset.netty.NettyRPCServer;
-import org.frameworkset.spi.BaseApplicationContext;
 import org.frameworkset.spi.BaseSPIManager2;
-import org.frameworkset.spi.ClientProxyContext;
 import org.frameworkset.spi.RemoteCallContext;
 import org.frameworkset.spi.remote.health.RPCValidator;
 import org.frameworkset.spi.remote.http.HttpServer;
@@ -38,13 +31,11 @@ import org.frameworkset.spi.remote.mina.server.MinaRPCServer;
 import org.frameworkset.spi.remote.rmi.RMIServer;
 import org.frameworkset.spi.serviceidentity.ServiceIDImpl;
 import org.frameworkset.spi.serviceidentity.TargetImpl;
+import org.frameworkset.util.shutdown.ShutdownUtil;
 
-import bboss.org.jgroups.Address;
-import bboss.org.jgroups.blocks.GroupRequest;
-import bboss.org.jgroups.blocks.RpcDispatcher;
-import bboss.org.jgroups.stack.IpAddress;
-import bboss.org.jgroups.util.Rsp;
-import bboss.org.jgroups.util.RspList;
+import java.lang.reflect.Method;
+import java.net.UnknownHostException;
+import java.util.*;
 
 /**
  * 
@@ -1428,7 +1419,7 @@ public class RPCHelper
     {
     	
             // use reflection and catch the Exception to allow PoolMan to work with 1.2 VM's
-            BaseApplicationContext.addShutdownHook(new Runnable(){
+		ShutdownUtil.addShutdownHook(new Runnable(){
 
 				public void run() {
 					 try {
