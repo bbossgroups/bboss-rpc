@@ -17,6 +17,7 @@ package org.frameworkset.spi.remote.webservice;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
@@ -57,7 +58,7 @@ public class FutureCall extends BaseFutureCall
 {
     private String ws_servertype = "cxf";
     
-    static Map<String,RPCCallService> clients = new HashMap<String,RPCCallService>();
+    static Map<String,RPCCallService> clients = new ConcurrentHashMap<String,RPCCallService>();
     
     /**
      * @param srcmsg
