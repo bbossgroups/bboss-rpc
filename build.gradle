@@ -166,7 +166,7 @@ dependencies {
              [group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.10',transitive: true],
              [group: 'com.caucho', name: 'hessian', version: '4.0.7', transitive: false]
     )
-    
+     compileOnly 'javax.jws:javax.jws-api:1.1'
      compileOnly (            
           [group: 'org.apache.geronimo.specs', name: 'geronimo-servlet_3.0_spec', version: '1.0', transitive: false],
               [group: 'org.apache.geronimo.specs', name: 'geronimo-j2ee-management_1.0_spec', version: '1.0', transitive: false],

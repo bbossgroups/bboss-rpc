@@ -19,7 +19,7 @@ public class EncryptDecryptAlgo
 	 * @return
 	 */
 	public String encrypt(String plainText) 
-	{    sun.misc.BASE64Encoder BASE64Encoder = new sun.misc.BASE64Encoder();
+	{    org.frameworkset.coder.BASE64Encoder BASE64Encoder = new org.frameworkset.coder.BASE64Encoder();
 	     String encode = BASE64Encoder.encodeBuffer(plainText.getBytes());
 	     return encode;
 
@@ -30,7 +30,7 @@ public class EncryptDecryptAlgo
 	 * @return
 	 */
 	public byte[] encrypt(byte[] in) 
-	{    sun.misc.BASE64Encoder BASE64Encoder = new sun.misc.BASE64Encoder();
+	{    org.frameworkset.coder.BASE64Encoder BASE64Encoder = new org.frameworkset.coder.BASE64Encoder();
 	     String encode = BASE64Encoder.encodeBuffer(in);
 	     return encode.getBytes();
 
@@ -44,7 +44,7 @@ public class EncryptDecryptAlgo
 	public String decrypt(String plainText) 
 	{
 	try {
-		 sun.misc.BASE64Decoder BASE64Decoder= new  sun.misc.BASE64Decoder();
+        org.frameworkset.coder.BASE64Decoder BASE64Decoder= new  org.frameworkset.coder.BASE64Decoder();
 		 String decode=new String(BASE64Decoder.decodeBuffer(plainText));
 		 return decode;
 	} catch (Exception e) {
@@ -59,7 +59,7 @@ public class EncryptDecryptAlgo
 	public byte[] decrypt(byte[] in) 
 	{
 	try {
-		 sun.misc.BASE64Decoder BASE64Decoder= new  sun.misc.BASE64Decoder();
+        org.frameworkset.coder.BASE64Decoder BASE64Decoder= new  org.frameworkset.coder.BASE64Decoder();
 		 byte[] decode=BASE64Decoder.decodeBuffer(new String(in));
 		 return decode;
 	} catch (Exception e) {
