@@ -57,7 +57,7 @@
 	repositories {
 		mavenLocal()
 		maven {
-			url "https://maven.aliyun.com/nexus/content/groups/public"
+			url "https://maven.aliyun.com/repository/public"
 		}
 		mavenCentral()
 		
@@ -103,7 +103,11 @@ sourceSets {
 }
 
 dependencies {
-	
+    api(
+            [group: 'org.apache.logging.log4j', name: 'log4j-api', version: "${log4j2_version}", transitive: false],
+            [group: 'org.apache.logging.log4j', name: 'log4j-core', version: "${log4j2_version}", transitive: false],
+            [group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "${log4j2_version}", transitive: true],
+    )
     api (
             [group: 'com.bbossgroups', name: 'bboss-util', version: "${BBOSS_VERSION}", transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-core', version: "${BBOSS_VERSION}", transitive: false],
@@ -111,7 +115,7 @@ dependencies {
 			[group: 'com.bbossgroups', name: 'bboss-http', version: "${BBOSS_VERSION}", transitive: true],
 
 //[group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25', transitive: false],
-           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36', transitive: true],
+//           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36', transitive: true],
             [group: 'oro', name: 'oro', version: '2.0.8', transitive: false],         
             [group: 'cglib', name: 'cglib-nodep', version: '3.3.0', transitive: false],
               [group: 'commons-lang', name: 'commons-lang', version: '2.6', transitive: false],
