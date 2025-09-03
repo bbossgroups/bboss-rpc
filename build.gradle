@@ -113,9 +113,9 @@ dependencies {
             [group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "${log4j2_version}", transitive: true],
     )
     api (
-            [group: 'com.bbossgroups', name: 'bboss-util', version: "${BBOSS_VERSION}", transitive: false],
-            [group: 'com.bbossgroups', name: 'bboss-core', version: "${BBOSS_VERSION}", transitive: false],
-            [group: 'com.bbossgroups', name: 'bboss-soa', version: "${BBOSS_VERSION}", transitive: false],
+//            [group: 'com.bbossgroups', name: 'bboss-util', version: "${BBOSS_VERSION}", transitive: false],
+//            [group: 'com.bbossgroups', name: 'bboss-core', version: "${BBOSS_VERSION}", transitive: false],
+//            [group: 'com.bbossgroups', name: 'bboss-soa', version: "${BBOSS_VERSION}", transitive: false],
 			[group: 'com.bbossgroups', name: 'bboss-http', version: "${BBOSS_VERSION}", transitive: true],
 
 //[group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25', transitive: false],
@@ -128,11 +128,11 @@ dependencies {
            [group: 'org.jboss.netty', name: 'netty', version: '3.2.10.Final', transitive: false],
 			//[group: 'io.netty', name: 'netty-all', version: '4.1.8.Final', transitive: false],
            [group: 'org.apache.mina', name: 'mina-core', version: '2.0.0-RC1', transitive: true],
-            [group: 'org.ow2.asm', name: 'asm', version: '9.6', transitive: false],
-            [group: 'org.ow2.asm', name: 'asm-util', version: '9.6', transitive: false],
-            [group: 'org.ow2.asm', name: 'asm-analysis', version: '9.6', transitive: false],
-            [group: 'org.ow2.asm', name: 'asm-tree', version: '9.6', transitive: false],
-            [group: 'org.ow2.asm', name: 'asm-commons', version: '9.6', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm', version: '9.8', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm-util', version: '9.8', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm-analysis', version: '9.8', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm-tree', version: '9.8', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm-commons', version: '9.8', transitive: false],
             [group: 'bsh', name: 'bsh', version: '2.0b1', transitive: false],
             [group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1', transitive: false],
              
