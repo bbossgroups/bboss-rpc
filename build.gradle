@@ -30,8 +30,8 @@
 	}
 
 	tasks.withType(Javadoc) {
-		sourceCompatibility = JAVADOC_SOURCE_LEVEL
-		targetCompatibility = JAVADOC_COMPILER_LEVEL
+		
+		
 		options.encoding = 'UTF-8'
 		// disable the crazy super-strict doclint tool in Java 8
         // noinspection SpellCheckingInspection
@@ -116,7 +116,7 @@ dependencies {
 //            [group: 'com.bbossgroups', name: 'bboss-util', version: "${BBOSS_VERSION}", transitive: false],
 //            [group: 'com.bbossgroups', name: 'bboss-core', version: "${BBOSS_VERSION}", transitive: false],
 //            [group: 'com.bbossgroups', name: 'bboss-soa', version: "${BBOSS_VERSION}", transitive: false],
-			[group: 'com.bbossgroups', name: 'bboss-http', version: "${BBOSS_VERSION}", transitive: true],
+			[group: 'com.bbossgroups', name: 'bboss-http', version: HTTP_VERSION, transitive: true],
 
 //[group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25', transitive: false],
 //           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36', transitive: true],
