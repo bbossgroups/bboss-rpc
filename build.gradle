@@ -80,7 +80,7 @@ sourceSets {
             srcDir 'src'
             srcDir 'src-camel'
           	srcDir 'src-cxf'
-          	srcDir 'src-http'
+//          	srcDir 'src-http'
           	srcDir 'src-jgroups'
           	srcDir 'src-jms'
           	srcDir 'src-mina'
@@ -115,7 +115,7 @@ dependencies {
 //            [group: 'com.bbossgroups', name: 'bboss-util', version: "${BBOSS_VERSION}", transitive: false],
 //            [group: 'com.bbossgroups', name: 'bboss-core', version: "${BBOSS_VERSION}", transitive: false],
 //            [group: 'com.bbossgroups', name: 'bboss-soa', version: "${BBOSS_VERSION}", transitive: false],
-			[group: 'com.bbossgroups', name: 'bboss-http', version: HTTP_VERSION, transitive: true],
+			[group: 'com.bbossgroups', name: 'bboss-http5', version: HTTP_VERSION, transitive: true],
 
 //[group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25', transitive: false],
 //           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36', transitive: true],

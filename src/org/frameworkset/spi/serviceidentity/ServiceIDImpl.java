@@ -25,7 +25,7 @@ import org.frameworkset.spi.remote.RemoteException;
 import org.frameworkset.spi.remote.RemoteServiceID;
 import org.frameworkset.spi.remote.Target;
 import org.frameworkset.spi.remote.Util;
-import org.frameworkset.spi.remote.http.HttpServer;
+//import org.frameworkset.spi.remote.http.HttpServer;
 import org.frameworkset.spi.remote.mina.server.MinaRPCServer;
 import org.frameworkset.spi.remote.restful.RestfulServiceManager;
 import org.frameworkset.spi.remote.rmi.RMIServer;
@@ -107,7 +107,8 @@ public class ServiceIDImpl extends BaseServiceIDImpl implements RemoteServiceID{
             }
             else if (target.protocol_http())
             {
-                return HttpServer.getHttpServer().started();
+//                return HttpServer.getHttpServer().started();
+                return false;
             }
             else if (target.protocol_jms())
             {
@@ -479,14 +480,14 @@ public class ServiceIDImpl extends BaseServiceIDImpl implements RemoteServiceID{
         }
         else if (target.protocol_http())
         {
-        	RPCAddress address = HttpServer.getHttpServer().getLocalAddress();
-            if (address != null)
-            {
-                this.sourceip = address.getIp();
-                this.sourceport = address.getPort() + "";
-                // this.sourcename = address.getIpAddress().getHostName();
-                this.sourcename = sourceip;
-            }
+//        	RPCAddress address = HttpServer.getHttpServer().getLocalAddress();
+//            if (address != null)
+//            {
+//                this.sourceip = address.getIp();
+//                this.sourceport = address.getPort() + "";
+//                // this.sourcename = address.getIpAddress().getHostName();
+//                this.sourcename = sourceip;
+//            }
         }
         else if (target.protocol_webservice())
         {

@@ -25,7 +25,7 @@ import org.frameworkset.netty.NettyRPCServer;
 import org.frameworkset.spi.BaseSPIManager2;
 import org.frameworkset.spi.RemoteCallContext;
 import org.frameworkset.spi.remote.health.RPCValidator;
-import org.frameworkset.spi.remote.http.HttpServer;
+//import org.frameworkset.spi.remote.http.HttpServer;
 import org.frameworkset.spi.remote.jms.JMSServer;
 import org.frameworkset.spi.remote.mina.server.MinaRPCServer;
 import org.frameworkset.spi.remote.rmi.RMIServer;
@@ -737,13 +737,13 @@ public class RPCHelper
     
     public void startHTTPServer()
     {
-        HttpServer.getHttpServer().start();
-        this.httpenabled = true;
+//        HttpServer.getHttpServer().start();
+//        this.httpenabled = true;
     }
     public void stopHTTPServer()
     {
-    	HttpServer.getHttpServer().stop();
-        this.httpenabled = false;
+//    	HttpServer.getHttpServer().stop();
+//        this.httpenabled = false;
     }
     public void stopJMSServer()
     {
