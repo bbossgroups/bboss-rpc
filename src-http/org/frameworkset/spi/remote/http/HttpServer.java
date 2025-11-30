@@ -367,8 +367,8 @@ public class HttpServer {
 				e.printStackTrace();
 			}
 		}
-		if(this.started )
-			ApplicationContext.addShutdownHook(new ShutDownHttpServer(this));
+//		if(this.started )
+//			ApplicationContext.addShutdownHook(new ShutDownHttpServer(this));
 	}
 	public void shutdown() throws IOException {
 		this.ioReactor.shutdown();

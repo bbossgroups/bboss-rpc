@@ -142,7 +142,7 @@ public class ThreadPoolManagerFactory
         pro = new Pro();
         pro.setName("maxdelayTime");pro.setValue("4");
         defaultPoolparams.put("maxdelayTime", pro);
-        BaseSPIManager2.addShutdownHook(new ShutdownThreadPools());
+//        BaseSPIManager2.addShutdownHook(new ShutdownThreadPools());
 
     }
 

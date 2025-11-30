@@ -165,7 +165,7 @@ public class NettyClinentTransport {
                         if (instance != null)
                             return instance;
                         instance = new NettyClinentTransport(address, corr);
-                        ApplicationContext.addShutdownHook(new ShutDownNetty());
+//                        ApplicationContext.addShutdownHook(new ShutDownNetty());
                         rpcClients.put(key, instance);
                     }
                     return instance;
@@ -177,7 +177,7 @@ public class NettyClinentTransport {
                 if (instance != null)
                     return instance;
                 instance = new NettyClinentTransport(address, corr);
-                ApplicationContext.addShutdownHook(new ShutDownNetty());
+//                ApplicationContext.addShutdownHook(new ShutDownNetty());
                 rpcClients.put(key, instance);
             }
             return instance;

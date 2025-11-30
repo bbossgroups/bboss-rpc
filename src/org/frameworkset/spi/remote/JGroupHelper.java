@@ -333,7 +333,7 @@ public class JGroupHelper
                 channel.connect(REMOTE_CLUSTER_NAME);
                 clusterstarted = true;
                 log.info("Start remote service successed.");
-                BaseSPIManager2.addShutdownHook(new ShutDownJGroup(this));
+//                BaseSPIManager2.addShutdownHook(new ShutDownJGroup(this));
                 // try {
                 // Class r = Runtime.getRuntime().getClass();
                 // java.lang.reflect.Method m =

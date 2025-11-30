@@ -184,7 +184,7 @@ public class NettyRPCServer
                 
                 System.out.println("Netty server is listenig at port " + PORT);
                 System.out.println("Netty server started.");
-                ShutdownUtil.addShutdownHook(new ShutDownNettyServer(this));
+//                ShutdownUtil.addShutdownHook(new ShutDownNettyServer(this));
                 this.started = true;
             }
             catch(Exception e)

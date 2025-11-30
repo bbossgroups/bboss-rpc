@@ -220,7 +220,7 @@ public class MinaRPCServer
 		        
 		        System.out.println("Mina server is listenig at port " + PORT);
 		        System.out.println("Mina server started.");
-		        ApplicationContext.addShutdownHook(new ShutDownMinaServer(this));
+//		        ApplicationContext.addShutdownHook(new ShutDownMinaServer(this));
 		        this.started = true;
 			}
 			catch(IOException e)

@@ -1415,25 +1415,25 @@ public class RPCHelper
         return address.toString();
     }
     
-    static
-    {
-    	
-            // use reflection and catch the Exception to allow PoolMan to work with 1.2 VM's
-		ShutdownUtil.addShutdownHook(new Runnable(){
-
-				public void run() {
-					 try {
-				           
-				           destroy();
-				           // GenericPoolManager.getInstance().destroyPools();
-				        } catch (Exception e) {
-				            System.out.println("Unable to properly shutdown: " + e);
-				        }
-					
-				}
-            	
-            });
-    }
+//    static
+//    {
+//    	
+//            // use reflection and catch the Exception to allow PoolMan to work with 1.2 VM's
+//		ShutdownUtil.addShutdownHook(new Runnable(){
+//
+//				public void run() {
+//					 try {
+//				           
+//				           destroy();
+//				           // GenericPoolManager.getInstance().destroyPools();
+//				        } catch (Exception e) {
+//				            System.out.println("Unable to properly shutdown: " + e);
+//				        }
+//					
+//				}
+//            	
+//            });
+//    }
 
 	
 

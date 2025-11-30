@@ -177,9 +177,9 @@ public class RMIServer {
 								System.out.println("RMI监听于IP：" + ip);
 								System.out.println("RMI监听于端口：" + PORT);
 								started = true;
-								ApplicationContext
-										.addShutdownHook(new ShutDownRMIServer(
-												server));
+//								ApplicationContext
+//										.addShutdownHook(new ShutDownRMIServer(
+//												server));
 								synchronized (task) {
 									task.wait();
 								}

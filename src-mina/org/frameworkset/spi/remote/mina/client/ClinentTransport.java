@@ -137,7 +137,6 @@ public class ClinentTransport
 
     /**
      * 
-     * @param host
      * @param port
      * @param corr
      * @return
@@ -192,7 +191,7 @@ public class ClinentTransport
                         if (instance != null)
                             return instance;
                         instance = new ClinentTransport(address, corr);
-                        ApplicationContext.addShutdownHook(new ShutDownMina());
+//                        ApplicationContext.addShutdownHook(new ShutDownMina());
                         rpcClients.put(key, instance);
                     }
                     return instance;
@@ -205,7 +204,7 @@ public class ClinentTransport
                 if (instance != null)
                     return instance;
                 instance = new ClinentTransport(address, corr);
-                ApplicationContext.addShutdownHook(new ShutDownMina());
+//                ApplicationContext.addShutdownHook(new ShutDownMina());
                 rpcClients.put(key, instance);
             }
             return instance;
